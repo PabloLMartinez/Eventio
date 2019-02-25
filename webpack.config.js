@@ -29,7 +29,7 @@ const minimize = new webpack.LoaderOptionsPlugin({
 
 const sources = [
     "babel-polyfill",
-    "./src/index.js"
+    "./src/actions.js"
 ];
 
 let plugins = [
