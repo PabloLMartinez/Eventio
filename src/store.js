@@ -3,6 +3,7 @@ import { routerReducer, routerMiddleware } from "react-router-redux";
 import { createLogger } from "redux-logger";
 import createSagaMiddleware from "redux-saga";
 import createHashHistory from "history/createHashHistory";
+import authReducer from "./auth/reducers/auth";
 import sagas from "./sagas";
 
 const loggerMiddleware = createLogger();
@@ -25,6 +26,7 @@ try {
 
 export const store = createStore(
   combineReducers({
+    authReducer,
     router: routerReducer
   }),
   retrievedState,
