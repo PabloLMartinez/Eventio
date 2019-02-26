@@ -29,7 +29,7 @@ const minimize = new webpack.LoaderOptionsPlugin({
 
 const sources = [
     "babel-polyfill",
-    "./src/actions.js"
+    "./src/index.js"
 ];
 
 let plugins = [
@@ -39,17 +39,7 @@ let plugins = [
     extractSass,
     new Dotenv(),
     new CopyWebpackPlugin([ { from: "assets", to: "assets" } ]),
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-        name: "vendor",
-        filename: "vendor.[hash].js",
-        minChunks: function(module) {
-            if (module.resource && (/^.*\.(css|scss)$/).test(module.resource)){
-                return false;
-            }
-            return module.context && module.context.includes("node_modules");
-        }
-    })
+    new webpack.optimize.ModuleConcatenationPlugin()
 ];
 
 if(production){
@@ -81,6 +71,7 @@ if(production){
 }
 
 module.exports = {
+    mode: "development",
     entry: sources,
     output: {
         path: path.join(__dirname, "build"),
@@ -138,7 +129,8 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: ['react']
+                            presets: ['@babel/preset-env', '@babel/preset-react'],
+                            plugins: ['@babel/plugin-proposal-object-rest-spread']
                         }
                     }
                 ],
@@ -154,10 +146,23 @@ module.exports = {
     },
     devServer: {
         contentBase: "./build",
+        inline: false,
         hot: true,
         historyApiFallback: true,
         compress: true
     },
-    plugins: plugins
+    plugins: plugins,
+    optimization: {
+        runtimeChunk: "single", // enable "runtime" chunk
+            splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                        name: "vendor",
+                        chunks: "all"
+                }
+            }
+        }
+    }
 };
 

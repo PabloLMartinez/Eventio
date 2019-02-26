@@ -8,7 +8,7 @@ const initialState = {
     profile : null
 };
 
-const authReducer = (state = initialState , action) => {
+const authReducer = (state = initialState, action) => {
     switch (action.type){
         case constants.VERIFY_AUTH:
             return {

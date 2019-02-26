@@ -10,8 +10,10 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from "react-ro
 import * as serviceWorker from './serviceWorker';
 
 import Login from "./auth/containers/login.container";
+import Dashboard from "./dashboard/containers/dashboard.container";
 import PrivateRoute from "./auth/containers/private.route.container";
 
+import { verifyAuth } from "./auth/actions/actions";
 import { HashRouter } from "react-router-dom";
 
 ReactDOM.render(
@@ -20,7 +22,7 @@ ReactDOM.render(
             <HashRouter>
                 <Switch>
                     <Route exact path="/login" component={Login} />
-                    <PrivateRoute path="/" onEnter={store.dispatch(verifyAuth())} component={Application} />
+                    <PrivateRoute path="/" onEnter={store.dispatch(verifyAuth())} component={Dashboard} />
                 </Switch>
             </HashRouter>
         </ConnectedRouter>

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import LoginComponent from "../components/login.component";
+import DashboardComponent from "../components/dashboard.component";
 
 const mapStateToProps = (state) => {
     return {};
@@ -9,9 +9,9 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-const LoginContainer = connect(
+const DashboardContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(LoginComponent);
+)(DashboardComponent);
 
-export default LoginContainer;
+export default DashboardContainer;
