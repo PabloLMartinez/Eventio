@@ -9,6 +9,7 @@ class LoginComponent extends Component{
     handleSubmit(e) {
         console.log('Email: ' + this.email.value);
         console.log('Password: ' + this.password.value);
+        this.props.login(this.email.value, this.password.value);
         e.preventDefault();
     }
 

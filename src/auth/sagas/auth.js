@@ -9,9 +9,9 @@ export function* requestLogin(payload) {
     try {
         const response = yield apiClient.login(payload.email, payload.password);
         yield put(authActions.authSuccess(response.data));
-        console.log("response.data login:::", response.data);
-        localStorage.setItem("authorization", response.data.authorization);
-        localStorage.setItem("jwtToken", response.data.refresh-token);
+        console.log("response login:::", response);
+        localStorage.setItem("authorization", response.headers.authorization);
+        localStorage.setItem("jwtToken", response.headers.refresh-token);
         yield put(push("/"));
     } catch(error){
         yield put(authActions.authFail(errorMessage(error)));
