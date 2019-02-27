@@ -11,7 +11,7 @@ export function* requestLogin(payload) {
         yield put(authActions.authSuccess(response.data));
         console.log("response login:::", response);
         localStorage.setItem("authorization", response.headers.authorization);
-        localStorage.setItem("jwtToken", response.headers.refresh-token);
+        localStorage.setItem("jwtToken", response.headers);
         yield put(push("/"));
     } catch(error){
         yield put(authActions.authFail(errorMessage(error)));
@@ -20,7 +20,7 @@ export function* requestLogin(payload) {
 
 export function* verifyAuth(payload) {
     try {
-        const token = localStorage.getItem("jwtToken");
+        const token = localStorage.getItem("authorization");
         if (!token) return yield put(authActions.verifyAuthFail(""));
 
         const response = yield apiClient.refreshTokenAuth(token);

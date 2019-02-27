@@ -91,7 +91,6 @@ module.exports = {
                 use: [{
                     loader: "style-loader",
                     options: {
-                        minimize: true
                     }
                 }, "css-loader"]
             },
@@ -113,7 +112,6 @@ module.exports = {
                     use: [{
                         loader: "css-loader",
                         options: {
-                            minimize: true
                         }
                     }, {
                         loader: "sass-loader"
@@ -134,6 +132,12 @@ module.exports = {
                         }
                     }
                 ],
+            },
+            {
+                test: /\.(gif|eot|woff|woff2|ttf|svg)$/,
+                loaders: [
+                    'url-loader'
+                ]
             }]
     },
     resolve: {

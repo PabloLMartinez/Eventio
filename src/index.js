@@ -16,6 +16,8 @@ import PrivateRoute from "./auth/containers/private.route.container";
 import { verifyAuth } from "./auth/actions/actions";
 import { HashRouter } from "react-router-dom";
 
+import "./main/styles/main.scss";
+
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
