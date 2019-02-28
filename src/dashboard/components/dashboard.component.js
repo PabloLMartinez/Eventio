@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Header from "../../main/containers/header.container";
-import Nav from "../../main/components/nav.component";
+import Nav from "../../main/containers/nav.container";
 import Footer from "../../main/components/footer.component";
 
 import "../styles/dashboard.scss";
@@ -12,6 +12,7 @@ class DashboardComponent extends Component{
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="dashboard-wrapper">
                 <Header />

@@ -20,6 +20,10 @@ header {
       border-radius: 35px;
       margin: -8px; /* Use this negative value is a bad practice */
       text-align: center;
+      span {
+        position: relative;
+        top: 11px;
+      }
     }
     .username {
       float: right;

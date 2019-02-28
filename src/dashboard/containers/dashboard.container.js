@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import DashboardComponent from "../components/dashboard.component";
 
 const mapStateToProps = (state) => {
-    return {};
+    return state.dashboardReducer;
 };
 
 const mapDispatchToProps = (dispatch) => {

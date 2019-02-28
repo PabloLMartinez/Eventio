@@ -5,6 +5,14 @@ import "../styles/nav.scss";
 class NavComponent extends Component{
     constructor(props) {
         super(props);
+        this.handleModeView = this.handleModeView.bind(this);
+    }
+
+    handleModeView(e) {
+        e.stopPropagation();
+        let className = e.target.className;
+        let view = className.substr(0, className.indexOf('-'));
+        this.props.changeView(view);
     }
 
     render() {
@@ -18,8 +26,8 @@ class NavComponent extends Component{
                     </ul>
                 </div>
                 <div className="view-mode">
-                    <span className="panel-icon" />
-                    <span className="list-icon" />
+                    <span className="panel-icon" onClick={this.handleModeView}/>
+                    <span className="list-icon" onClick={this.handleModeView}/>
                 </div>
             </nav>
         );
