@@ -9,18 +9,28 @@ class LoginComponent extends Component{
         super(props);
         this.state = {
             width: window.innerWidth,
+            isAuthenticated: true
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         this.props.login(this.email.value, this.password.value);
+        this.setState({
+            isAuthenticated: this.props.isAuthenticated
+        });
         e.preventDefault();
     }
 
     render() {
-        const { width } = this.state;
+        const { width, isAuthenticated } = this.state;
         const isMobile = width <= 500;
+
+        const errorMessage = isAuthenticated ? (
+            <span>Enter your details below.</span>
+        ) : (
+            <span className="errorMessage">Oops! That email and password combination is not valid.</span>
+        );
 
         if (isMobile) {
             return (
@@ -28,13 +38,12 @@ class LoginComponent extends Component{
                     <div className="logo-mobile" />
                     <div className="login-form">
                         <h2>Sign in to Eventio.</h2>
-                        <span>Enter your details below.</span>
+                        {errorMessage}
                         <form onSubmit={this.handleSubmit}>
-                            <div className="wrap-input">
+                            <div className={isAuthenticated ? "wrap-input" : "wrap-input-error" }>
                                 <input type="text" placeholder="Email" ref={(email) => this.email = email}/>
                             </div>
-                            <div className="wrap-input">
-
+                            <div className={isAuthenticated ? "wrap-input" : "wrap-input-error" }>
                                 <input type="password" placeholder="Password"
                                        ref={(password) => this.password = password}/>
                                 <span className="btn-show-pass">
@@ -57,13 +66,12 @@ class LoginComponent extends Component{
                     </div>
                     <div className="login-form">
                         <h2>Sign in to Eventio.</h2>
-                        <span>Enter your details below.</span>
+                        {errorMessage}
                         <form onSubmit={this.handleSubmit}>
-                            <div className="wrap-input">
+                            <div className={isAuthenticated ? "wrap-input" : "wrap-input-error" }>
                                 <input type="text" placeholder="Email" ref={(email) => this.email = email}/>
                             </div>
-                            <div className="wrap-input">
-
+                            <div className={isAuthenticated ? "wrap-input" : "wrap-input-error" }>
                                 <input type="password" placeholder="Password"
                                        ref={(password) => this.password = password}/>
                                 <span className="btn-show-pass">

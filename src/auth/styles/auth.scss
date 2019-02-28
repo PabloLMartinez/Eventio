@@ -18,10 +18,34 @@
     span {
       color: #9BA5AE;
     }
+    .errorMessage {
+      color: red;
+    }
     form {
       width: 55%;
       height: auto;
       margin-top: 4%;
+      .wrap-input-error {
+        width: 100%;
+        border-bottom: 2px solid red;
+        margin-bottom: 4%;
+        color: #E1E4E6;
+        .btn-show-pass {
+          font-size: 15px;
+          color: #E1E4E6;
+          display: inline-block;
+          cursor: pointer;
+          vertical-align: middle;
+          margin-left: 20px;
+        }
+        input {
+          font-size: 15px;
+          line-height: 1.2;
+          width: 90%;
+          height: 45px;
+          display: inline-block;
+        }
+      }
       .wrap-input {
         width: 100%;
         border-bottom: 2px solid #E1E4E6;
@@ -107,10 +131,35 @@
       color: #9BA5AE;
       margin-left: 23%;
     }
+    .errorMessage {
+      color: red;
+      margin: 0;
+    }
     form {
       width: 100%;
       height: auto;
       margin-top: 14%;
+      .wrap-input-error {
+        width: 100%;
+        border-bottom: 2px solid red;
+        margin-bottom: 4%;
+        color: #E1E4E6;
+        .btn-show-pass {
+          font-size: 15px;
+          color: #E1E4E6;
+          display: inline-block;
+          cursor: pointer;
+          vertical-align: middle;
+          margin-left: 13px;
+        }
+        input {
+          font-size: 15px;
+          line-height: 1.2;
+          width: 90%;
+          height: 45px;
+          display: inline-block;
+        }
+      }
       .wrap-input {
         width: 100%;
         border-bottom: 2px solid #E1E4E6;
