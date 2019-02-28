@@ -1,6 +1,6 @@
 import { put } from "redux-saga/effects";
 import { push } from "react-router-redux";
-import * as authActions from "../actions/actions";
+import * as authActions from "../actions";
 import * as apiClient from "../httpClient/apiClient";
 
 import { errorMessage } from "lib/errors";

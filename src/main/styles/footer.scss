@@ -1,0 +1,17 @@
+footer {
+  height: 115px;
+  margin-top: 90px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 116px;
+  button {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #323C46;
+    color: #FFFFFF;
+    font-size: 25px;
+    cursor: pointer;
+  }
+}

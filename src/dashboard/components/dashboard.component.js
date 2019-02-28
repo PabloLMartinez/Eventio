@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 
+import Header from "../../main/containers/header.container";
+import Nav from "../../main/components/nav.component";
+import Footer from "../../main/components/footer.component";
+
+import "../styles/dashboard.scss";
+
 class DashboardComponent extends Component{
     constructor(props) {
         super(props);
@@ -8,7 +14,17 @@ class DashboardComponent extends Component{
     render() {
         return (
             <div className="dashboard-wrapper">
-                <h1>Event list</h1>
+                <Header />
+                <Nav />
+                <section className="events-container">
+                    <div className="event-box"/>
+                    <div className="event-box"/>
+                    <div className="event-box"/>
+                    <div className="event-box"/>
+                    <div className="event-box"/>
+                    <div className="event-box"/>
+                </section>
+                <Footer />
             </div>
         );
     }

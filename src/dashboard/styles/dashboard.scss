@@ -1,0 +1,25 @@
+body {
+  background-color: #F9F9FB !important;
+}
+.dashboard-wrapper {
+  width: 90%;
+  margin: auto;
+}
+.events-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  align-content: center;
+  height: 600px;
+  width: 80%;
+  margin: auto;
+
+  .event-box {
+    width: 30%;
+    height: 50%;
+    margin: 7px;
+    border: 1px solid;
+  }
+}

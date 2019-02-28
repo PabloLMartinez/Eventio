@@ -1,0 +1,36 @@
+nav {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  width: 74%;
+  margin: auto;
+  .navigator {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      li {
+        float: left;
+        font-size: 12px;
+        font-weight: 700;
+        margin-right: 35px;
+      }
+    }
+  }
+  .view-mode {
+    .panel-icon {
+      background: url(/assets/icons/panel_dark.png) no-repeat !important;
+      height: 20px;
+      width: 23px;
+      display: inline-block;
+      margin-right: 7px;
+    }
+    .list-icon {
+      background: url(/assets/icons/list_light.png) no-repeat !important;
+      height: 21px;
+      width: 24px;
+      display: inline-block;
+    }
+  }
+}

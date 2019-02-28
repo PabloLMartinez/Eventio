@@ -13,7 +13,7 @@ import Login from "./auth/containers/login.container";
 import Dashboard from "./dashboard/containers/dashboard.container";
 import PrivateRoute from "./auth/containers/private.route.container";
 
-import { verifyAuth } from "./auth/actions/actions";
+import { verifyAuth } from "./auth/actions";
 import { HashRouter } from "react-router-dom";
 
 import "./main/styles/main.scss";

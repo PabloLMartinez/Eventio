@@ -35,7 +35,7 @@ export const verifyAuthFail = (error) => {
         error
     };
 };
-export const logout = (email, password) => {
+export const logout = () => {
     return {
         type: constants.LOGOUT
     };
