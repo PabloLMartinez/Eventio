@@ -12,7 +12,7 @@ class NavComponent extends Component{
             <nav>
                 <div className="navigator">
                     <ul>
-                        <li>ALL EVENTS</li>
+                        <li className="active">ALL EVENTS</li>
                         <li>FUTURE EVENTS</li>
                         <li>PAST EVENTS</li>
                     </ul>
