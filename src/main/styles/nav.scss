@@ -24,7 +24,7 @@ nav {
     }
   }
   .view-mode {
-    .panel-icon {
+    .panel-icon-dark {
       background: url(/assets/icons/panel_dark.png) no-repeat !important;
       height: 20px;
       width: 23px;
@@ -32,9 +32,24 @@ nav {
       margin-right: 7px;
       cursor: pointer;
     }
-    .list-icon {
+    .list-icon-light {
       background: url(/assets/icons/list_light.png) no-repeat !important;
       height: 21px;
+      width: 24px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .panel-icon-ligh {
+      background: url(/assets/icons/panel_light.png) no-repeat !important;
+      height: 20px;
+      width: 23px;
+      display: inline-block;
+      margin-right: 7px;
+      cursor: pointer;
+    }
+    .list-icon-dark {
+      background: url(/assets/icons/list_dark.png) no-repeat !important;
+      height: 20px;
       width: 24px;
       display: inline-block;
       cursor: pointer;

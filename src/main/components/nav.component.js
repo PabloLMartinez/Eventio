@@ -5,6 +5,9 @@ import "../styles/nav.scss";
 class NavComponent extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            viewListMode: "panel"
+        };
         this.handleModeView = this.handleModeView.bind(this);
     }
 
@@ -12,10 +15,14 @@ class NavComponent extends Component{
         e.stopPropagation();
         let className = e.target.className;
         let view = className.substr(0, className.indexOf('-'));
+        this.setState({ viewListMode: view });
         this.props.changeView(view);
     }
 
     render() {
+        console.log("nav component  ", this.state.viewListMode);
+        const { viewListMode } = this.state;
+
         return (
             <nav>
                 <div className="navigator">
@@ -26,8 +33,8 @@ class NavComponent extends Component{
                     </ul>
                 </div>
                 <div className="view-mode">
-                    <span className="panel-icon" onClick={this.handleModeView}/>
-                    <span className="list-icon" onClick={this.handleModeView}/>
+                    <span className={`${viewListMode === "panel" ? 'panel-icon-dark' : 'panel-icon-ligh'}`} onClick={this.handleModeView}/>
+                    <span className={`${viewListMode === "list" ? 'list-icon-dark' : 'list-icon-light'}`} onClick={this.handleModeView}/>
                 </div>
             </nav>
         );
