@@ -1,12 +1,18 @@
 import { connect } from "react-redux";
 import DashboardComponent from "../components/dashboard.component";
 
+import * as actions from "../actions";
+
 const mapStateToProps = (state) => {
     return state.dashboardReducer;
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {};
+    return {
+        requestAllEvents: () => {
+            dispatch(actions.requestAllEvents());
+        }
+    };
 };
 
 const DashboardContainer = connect(

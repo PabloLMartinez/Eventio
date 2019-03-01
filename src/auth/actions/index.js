@@ -1,42 +1,22 @@
 import constants from "../constants";
 
-export const requestLogin = (email, password) => {
-    return {
-        type: constants.REQUEST_LOGIN,
-        email, password
-    };
-};
-export const authSuccess = (data) => {
-    return {
-        type: constants.AUTH_SUCCESS,
-        data
-    };
-};
-export const authFail = (error) => {
-    return {
-        type: constants.AUTH_FAIL,
-        error
-    };
-};
-export const verifyAuth = () => {
-    return {
-        type: constants.VERIFY_AUTH
-    };
-};
-export const verifyAuthSuccess = (data) => {
-    return {
-        type: constants.VERIFY_AUTH_SUCCESS,
-        data
-    };
-};
-export const verifyAuthFail = (error) => {
-    return {
-        type: constants.VERIFY_AUTH_FAIL,
-        error
-    };
-};
-export const logout = () => {
-    return {
-        type: constants.LOGOUT
-    };
-};
+export const requestLogin = (email, password) =>
+    ({ email, password, type: constants.REQUEST_LOGIN });
+
+export const authSuccess = (data) =>
+    ({ data, type: constants.AUTH_SUCCESS });
+
+export const authFail = (error) =>
+    ({ error, type: constants.AUTH_FAIL });
+
+export const verifyAuth = () =>
+    ({ type: constants.VERIFY_AUTH });
+
+export const verifyAuthSuccess = (data) =>
+    ({ data, type: constants.VERIFY_AUTH_SUCCESS });
+
+export const verifyAuthFail = (error) =>
+    ({ error, type: constants.VERIFY_AUTH_FAIL });
+
+export const logout = () =>
+    ({ type: constants.LOGOUT });

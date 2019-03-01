@@ -16,6 +16,10 @@ class DashboardComponent extends Component{
         };
     }
 
+    componentDidMount() {
+        this.props.requestAllEvents();
+    }
+
     componentDidUpdate(prevProps) {
         if (this.props.listView.view !== prevProps.listView.view) {
             this.setState({ viewListMode: this.props.listView.view });
@@ -24,6 +28,8 @@ class DashboardComponent extends Component{
 
     render() {
         const { viewListMode } = this.state;
+
+        console.log("all events:::   ", this.props.events);
 
         const viewListEvents = viewListMode === "panel" ? (
             <EventListPanel />

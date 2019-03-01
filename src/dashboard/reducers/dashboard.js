@@ -1,11 +1,51 @@
 import constants from "../constants";
 
+const common = {
+    list: {
+        data: [],
+        isFetching: false
+    }
+};
+
 const initialState = {
     listView: "",
+    events: {
+        ...common
+    },
 };
 
 const dashboardReducer = (state = initialState, action) => {
     switch (action.type){
+        case constants.REQUEST_ALL_EVENTS:
+            return {
+                ...state,
+                events: {
+                    list: {
+                        ...state.events.list,
+                        isFetching: true
+                    }
+                }
+            };
+        case constants.REQUEST_ALL_EVENTS_SUCCEEDED:
+            return {
+                ...state,
+                events: {
+                    list: {
+                        data: action.data,
+                        isFetching: false
+                    }
+                }
+            };
+        case constants.REQUEST_ALL_EVENTS_ERROR:
+            return {
+                ...state,
+                events: {
+                    list: {
+                        data: [],
+                        isFetching: false
+                    }
+                }
+            };
         case constants.CHANGE_VIEW:
             return {
                 ...state,

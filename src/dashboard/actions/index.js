@@ -1,8 +1,13 @@
 import constants from "../constants";
 
-export const changeView = (view) => {
-    return {
-        type: constants.CHANGE_VIEW,
-        view
-    };
-};
+export const changeView = (view) =>
+    ({ view, type: constants.CHANGE_VIEW });
+
+export const requestAllEvents = () =>
+    ({ type: constants.REQUEST_ALL_EVENTS });
+
+export const requestAllEventsSucceeded = data =>
+    ({ data, type: constants.REQUEST_ALL_EVENTS_SUCCEEDED });
+
+export const requestAllEventsError = error =>
+    ({ error, type: constants.REQUEST_ALL_EVENTS_ERROR });
