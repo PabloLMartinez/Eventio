@@ -5,73 +5,147 @@ import "../styles/event.list.panel.scss";
 class EventListPanelComponent extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            width: window.innerWidth
+        };
     }
 
     render() {
-        return (
-            <section className="events-container-panel">
-                <article className="event-box">
-                    <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                    <h3>How to get angry</h3>
-                    <span className="event-owner">Tom Watts</span>
-                    <p className="event-description">I will show you how to get angry in a second</p>
-                    <div className="event-footer">
-                        <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
-                        <button>Edit</button>
-                    </div>
-                </article>
-                <article className="event-box">
-                    <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                    <h3>How to get angry</h3>
-                    <span className="event-owner">Tom Watts</span>
-                    <p className="event-description">I will show you how to get angry in a second</p>
-                    <div className="event-footer">
-                        <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
-                        <button>Edit</button>
-                    </div>
-                </article>
-                <article className="event-box">
-                    <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                    <h3>How to get angry</h3>
-                    <span className="event-owner">Tom Watts</span>
-                    <p className="event-description">I will show you how to get angry in a second</p>
-                    <div className="event-footer">
-                        <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
-                        <button>Edit</button>
-                    </div>
-                </article>
-                <article className="event-box">
-                    <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                    <h3>How to get angry</h3>
-                    <span className="event-owner">Tom Watts</span>
-                    <p className="event-description">I will show you how to get angry in a second</p>
-                    <div className="event-footer">
-                        <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
-                        <button>Edit</button>
-                    </div>
-                </article>
-                <article className="event-box">
-                    <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                    <h3>How to get angry</h3>
-                    <span className="event-owner">Tom Watts</span>
-                    <p className="event-description">I will show you how to get angry in a second</p>
-                    <div className="event-footer">
-                        <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
-                        <button>Edit</button>
-                    </div>
-                </article>
-                <article className="event-box">
-                    <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                    <h3>How to get angry</h3>
-                    <span className="event-owner">Tom Watts</span>
-                    <p className="event-description">I will show you how to get angry in a second</p>
-                    <div className="event-footer">
-                        <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
-                        <button>Edit</button>
-                    </div>
-                </article>
-            </section>
-        );
+        const { width } = this.state;
+        const isMobile = width <= 500;
+
+        if (isMobile) {
+            return (
+                <section className="events-container-panel-mobile">
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                </section>
+            );
+        } else {
+            return (
+                <section className="events-container-panel-desktop">
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                    <article className="event-box">
+                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
+                        <h3>How to get angry</h3>
+                        <span className="event-owner">Tom Watts</span>
+                        <p className="event-description">I will show you how to get angry in a second</p>
+                        <div className="event-footer">
+                            <div className="counter"><i className="fas fa-user-alt"/> 9 of 31</div>
+                            <button>Edit</button>
+                        </div>
+                    </article>
+                </section>
+            );
+        }
+
     }
 }
 
