@@ -6,7 +6,8 @@ class NavComponent extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            viewListMode: "panel"
+            viewListMode: "panel",
+            width: window.innerWidth
         };
         this.handleModeView = this.handleModeView.bind(this);
     }
@@ -20,24 +21,41 @@ class NavComponent extends Component{
     }
 
     render() {
-        console.log("nav component  ", this.state.viewListMode);
-        const { viewListMode } = this.state;
+        const { width, viewListMode } = this.state;
+        const isMobile = width <= 500;
 
-        return (
-            <nav>
-                <div className="navigator">
-                    <ul>
-                        <li className="active">ALL EVENTS</li>
-                        <li>FUTURE EVENTS</li>
-                        <li>PAST EVENTS</li>
-                    </ul>
-                </div>
-                <div className="view-mode">
-                    <span className={`${viewListMode === "panel" ? 'panel-icon-dark' : 'panel-icon-ligh'}`} onClick={this.handleModeView}/>
-                    <span className={`${viewListMode === "list" ? 'list-icon-dark' : 'list-icon-light'}`} onClick={this.handleModeView}/>
-                </div>
-            </nav>
-        );
+        if (isMobile) {
+            return (
+                <nav className="nav-mobile">
+                    <div className="navigator">
+                        <label>SHOW:</label>
+                        <select className="select-view-mode">
+                            <option>ALL EVENTS</option>
+                        </select>
+                    </div>
+                    <div className="view-mode">
+                        <span className={`${viewListMode === "panel" ? 'panel-icon-dark' : 'panel-icon-ligh'}`} onClick={this.handleModeView}/>
+                        <span className={`${viewListMode === "list" ? 'list-icon-dark' : 'list-icon-light'}`} onClick={this.handleModeView}/>
+                    </div>
+                </nav>
+            );
+        } else {
+            return (
+                <nav className="nav-desktop">
+                    <div className="navigator">
+                        <ul>
+                            <li className="active">ALL EVENTS</li>
+                            <li>FUTURE EVENTS</li>
+                            <li>PAST EVENTS</li>
+                        </ul>
+                    </div>
+                    <div className="view-mode">
+                        <span className={`${viewListMode === "panel" ? 'panel-icon-dark' : 'panel-icon-ligh'}`} onClick={this.handleModeView}/>
+                        <span className={`${viewListMode === "list" ? 'list-icon-dark' : 'list-icon-light'}`} onClick={this.handleModeView}/>
+                    </div>
+                </nav>
+            );
+        }
     }
 }
 

@@ -5,6 +5,9 @@ import "../styles/header.scss";
 class HeaderComponent extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            width: window.innerWidth
+        };
         this.handleLogout = this.handleLogout.bind(this);
     }
 
@@ -14,20 +17,39 @@ class HeaderComponent extends Component{
     }
 
     render() {
-        return (
-            <header>
-                <div className="logo" />
-                <div className="profile-settings">
-                    <div className="avatar">
-                        <span>TM</span>
+        const { width } = this.state;
+        const isMobile = width <= 500;
+
+        if (isMobile) {
+            return (
+                <header className="header-mobile">
+                    <div className="logo" />
+                    <div className="profile-settings">
+                        <div className="avatar">
+                            <span>TM</span>
+                        </div>
+                        <div className="username">
+                            <span className="logout" onClick={this.handleLogout}>Logout</span>
+                        </div>
                     </div>
-                    <div className="username">
-                        <span className="user">Tom Watts</span>
-                        <span className="logout" onClick={this.handleLogout}>Logout</span>
+                </header>
+            );
+        } else {
+            return (
+                <header className="header-desktop">
+                    <div className="logo" />
+                    <div className="profile-settings">
+                        <div className="avatar">
+                            <span>TM</span>
+                        </div>
+                        <div className="username">
+                            <span className="user">Tom Watts</span>
+                            <span className="logout" onClick={this.handleLogout}>Logout</span>
+                        </div>
                     </div>
-                </div>
-            </header>
-        );
+                </header>
+            );
+        }
     }
 }
 

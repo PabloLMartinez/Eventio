@@ -1,4 +1,5 @@
-header {
+/***************************** Desktop *******************************/
+header.header-desktop {
   height: 115px;
   margin-top: 25px;
   display: flex;
@@ -11,6 +12,44 @@ header {
   }
   .profile-settings {
     width: 12%;
+    color: #97A0AA;
+    .avatar {
+      width: 40px;
+      height: 40px;
+      float: left;
+      background-color: #D9DCE1;
+      border-radius: 35px;
+      margin: -8px; /* Use this negative value is a bad practice */
+      text-align: center;
+      span {
+        position: relative;
+        top: 11px;
+      }
+    }
+    .username {
+      float: right;
+      .logout {
+        margin-left: 5px;
+        cursor: pointer;
+        color: blue;
+      }
+    }
+
+  }
+}
+
+/***************************** Mobile *******************************/
+header.header-mobile {
+  height: 100px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    background: url(/assets/logo-mobile.png) no-repeat !important;
+    height: 26px;
+    width: 26px;
+  }
+  .profile-settings {
     color: #97A0AA;
     .avatar {
       width: 40px;
