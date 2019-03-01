@@ -14,124 +14,60 @@ class EventListListComponent extends Component{
         const { width } = this.state;
         const isMobile = width <= 500;
 
-        console.log("all events:::   ", this.props.events.list.data);
+        const data = this.props.events.list.data || [];
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+        ];
+        const articleDesktop = data.map( (event, key) => {
+            let eventDate = new Date(event.startsAt);
+
+            let dateFull =
+                monthNames[(eventDate.getMonth())] + ' ' +
+                eventDate.getDate() + ', ' +
+                eventDate.getFullYear() + ' - ' +
+                eventDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+            return <article className="event-box" key={key}>
+                <h3>{event.title}</h3>
+                <p className="event-description">{event.description.substring(0,31)+"..."}</p>
+                <span className="event-owner">{event.owner.firstName + ' ' + event.owner.lastName}</span>
+                <span className="event-date">{dateFull}</span>
+                <div className="counter">{event.attendees.length + ' of ' + event.capacity}</div>
+                <button>EDIT</button>
+            </article>;
+        });
+
+        const articleMobile = data.map( (event, key) => {
+            let eventDate = new Date(event.startsAt);
+
+            let dateFull =
+                monthNames[(eventDate.getMonth())] + ' ' +
+                eventDate.getDate() + ', ' +
+                eventDate.getFullYear() + ' - ' +
+                eventDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+            return <article className="event-box" key={key}>
+                <h3>{event.title}</h3>
+                <p className="event-description">{event.description.substring(0,31)+"..."}</p>
+                <div>
+                    <span className="event-date">{dateFull}</span>
+                    <br />
+                    <span className="counter">{event.attendees.length + ' of ' + event.capacity}</span>
+                    <button>EDIT</button>
+                </div>
+            </article>;
+        });
 
         if (isMobile) {
             return (
                 <section className="events-container-list-mobile">
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angr...</p>
-                        <div>
-                            <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                            <br />
-                            <span className="counter">9 of 31</span>
-                            <button>Edit</button>
-                        </div>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angr...</p>
-                        <div>
-                            <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                            <br />
-                            <span className="counter">9 of 31</span>
-                            <button>Edit</button>
-                        </div>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angr...</p>
-                        <div>
-                            <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                            <br />
-                            <span className="counter">9 of 31</span>
-                            <button>Edit</button>
-                        </div>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angr...</p>
-                        <div>
-                            <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                            <br />
-                            <span className="counter">9 of 31</span>
-                            <button>Edit</button>
-                        </div>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angr...</p>
-                        <div>
-                            <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                            <br />
-                            <span className="counter">9 of 31</span>
-                            <button>Edit</button>
-                        </div>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angr...</p>
-                        <div>
-                            <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                            <br />
-                            <span className="counter">9 of 31</span>
-                            <button>Edit</button>
-                        </div>
-                    </article>
+                    {articleMobile}
                 </section>
             );
         } else {
             return (
                 <section className="events-container-list-desktop">
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angry in a second</p>
-                        <span className="event-owner">Tom Watts</span>
-                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                        <div className="counter">9 of 31</div>
-                        <button>Edit</button>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angry in a second</p>
-                        <span className="event-owner">Tom Watts</span>
-                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                        <div className="counter">9 of 31</div>
-                        <button>Edit</button>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angry in a second</p>
-                        <span className="event-owner">Tom Watts</span>
-                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                        <div className="counter">9 of 31</div>
-                        <button>Edit</button>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angry in a second</p>
-                        <span className="event-owner">Tom Watts</span>
-                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                        <div className="counter">9 of 31</div>
-                        <button>Edit</button>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angry in a second</p>
-                        <span className="event-owner">Tom Watts</span>
-                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                        <div className="counter">9 of 31</div>
-                        <button>Edit</button>
-                    </article>
-                    <article className="event-box">
-                        <h3>How to get angry</h3>
-                        <p className="event-description">I will show you how to get angry in a second</p>
-                        <span className="event-owner">Tom Watts</span>
-                        <span className="event-date">April 4, 2017 - 2:17 PM</span>
-                        <div className="counter">9 of 31</div>
-                        <button>Edit</button>
-                    </article>
+                    {articleDesktop}
                 </section>
             );
         }

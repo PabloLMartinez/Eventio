@@ -31,7 +31,7 @@ class EventListPanelComponent extends Component{
                         <span className="event-date">{dateFull}</span>
                         <h3>{event.title}</h3>
                         <span className="event-owner">{event.owner.firstName + ' ' + event.owner.lastName}</span>
-                        <p className="event-description">{ event.description.substring(0,56)+"..."}</p>
+                        <p className="event-description">{event.description.substring(0,56)+"..."}</p>
                         <div className="event-footer">
                             <div className="counter"><i className="fas fa-user-alt"/>
                                 {event.attendees.length + ' of ' + event.capacity}
