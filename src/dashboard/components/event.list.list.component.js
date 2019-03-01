@@ -14,6 +14,8 @@ class EventListListComponent extends Component{
         const { width } = this.state;
         const isMobile = width <= 500;
 
+        console.log("all events:::   ", this.props.events.list.data);
+
         if (isMobile) {
             return (
                 <section className="events-container-list-mobile">

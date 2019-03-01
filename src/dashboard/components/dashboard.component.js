@@ -29,8 +29,6 @@ class DashboardComponent extends Component{
     render() {
         const { viewListMode } = this.state;
 
-        console.log("all events:::   ", this.props.events);
-
         const viewListEvents = viewListMode === "panel" ? (
             <EventListPanel />
         ) : (

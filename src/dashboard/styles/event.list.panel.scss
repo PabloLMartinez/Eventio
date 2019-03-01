@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
-  align-content: center;
   height: 600px;
   width: 80%;
   margin: auto;
@@ -19,6 +18,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
     .event-date {
       color: #D9DCE1;
+      font-size: 15px;
     }
     h3 {
       color: #000000;
@@ -73,6 +73,7 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     .event-date {
       color: #D9DCE1;
+      font-size: 15px;
     }
     h3 {
       color: #000000;
