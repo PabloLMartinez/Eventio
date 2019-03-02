@@ -9,6 +9,7 @@ const common = {
 
 const initialState = {
     listView: "",
+    activeFilter: 0,
     events: {
         ...common
     },
@@ -50,6 +51,11 @@ const dashboardReducer = (state = initialState, action) => {
             return {
                 ...state,
                 listView: action
+            };
+        case constants.CHANGE_FILTER:
+            return {
+                ...state,
+                activeFilter: action
             };
         default:
             return state;

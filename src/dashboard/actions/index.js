@@ -11,3 +11,6 @@ export const requestAllEventsSucceeded = data =>
 
 export const requestAllEventsError = error =>
     ({ error, type: constants.REQUEST_ALL_EVENTS_ERROR });
+
+export const changeFilter = (activeFilter) =>
+    ({ activeFilter, type: constants.CHANGE_FILTER });

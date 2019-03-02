@@ -6,18 +6,46 @@ class EventListPanelComponent extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            width: window.innerWidth
+            width: window.innerWidth,
+            activeFilter: 0,
+            events: []
         };
+    }
+
+    // Check any updates from props (Filter & Event List)
+    componentDidUpdate(prevProps) {
+        if (this.props.activeFilter.activeFilter !== prevProps.activeFilter.activeFilter) {
+            this.setState({ activeFilter: this.props.activeFilter.activeFilter });
+        }
+
+        if (this.props.events.list.data !== prevProps.events.list.data) {
+            this.setState({ events: this.props.events.list.data });
+        }
     }
 
     render() {
         const { width } = this.state;
         const isMobile = width <= 500;
 
-        const data = this.props.events.list.data || [];
+        let data = this.state.events || [];
+        let today = new Date();
+
+        if(this.state.activeFilter === 1) {
+            // Return only future events
+            data = data.filter((event) => {
+                return new Date(event.startsAt) >= today;
+            });
+        } else if (this.state.activeFilter === 2) {
+            // Return only past events
+            data = data.filter((event) => {
+                return new Date(event.startsAt) <= today;
+            });
+        }
+
         const monthNames = [
             "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
         ];
+
         const article = data.map( (event, key) => {
             let eventDate = new Date(event.startsAt);
 
