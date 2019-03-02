@@ -7,19 +7,14 @@ class EventListPanelComponent extends Component{
         super(props);
         this.state = {
             width: window.innerWidth,
-            activeFilter: 0,
-            events: []
+            activeFilter: 0
         };
     }
 
-    // Check any updates from props (Filter & Event List)
+    // Check any updates from props (Filter)
     componentDidUpdate(prevProps) {
         if (this.props.activeFilter.activeFilter !== prevProps.activeFilter.activeFilter) {
             this.setState({ activeFilter: this.props.activeFilter.activeFilter });
-        }
-
-        if (this.props.events.list.data !== prevProps.events.list.data) {
-            this.setState({ events: this.props.events.list.data });
         }
     }
 
@@ -27,7 +22,7 @@ class EventListPanelComponent extends Component{
         const { width } = this.state;
         const isMobile = width <= 500;
 
-        let data = this.state.events || [];
+        let data = this.props.events.list.data || [];
         let today = new Date();
 
         if(this.state.activeFilter === 1) {
@@ -56,17 +51,17 @@ class EventListPanelComponent extends Component{
                 eventDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
             return <article className="event-box" key={key}>
-                        <span className="event-date">{dateFull}</span>
-                        <h3>{event.title}</h3>
-                        <span className="event-owner">{event.owner.firstName + ' ' + event.owner.lastName}</span>
-                        <p className="event-description">{event.description.substring(0,56)+"..."}</p>
-                        <div className="event-footer">
-                            <div className="counter"><i className="fas fa-user-alt"/>
-                                {event.attendees.length + ' of ' + event.capacity}
-                            </div>
-                            <button>EDIT</button>
+                    <span className="event-date">{dateFull}</span>
+                    <h3>{event.title}</h3>
+                    <span className="event-owner">{event.owner.firstName + ' ' + event.owner.lastName}</span>
+                    <p className="event-description">{event.description.substring(0,56)+"..."}</p>
+                    <div className="event-footer">
+                        <div className="counter"><i className="fas fa-user-alt"/>
+                            {event.attendees.length + ' of ' + event.capacity}
                         </div>
-                    </article>;
+                        <button>EDIT</button>
+                    </div>
+                </article>;
         });
 
         if (isMobile) {

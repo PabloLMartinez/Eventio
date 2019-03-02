@@ -7,19 +7,14 @@ class EventListListComponent extends Component{
         super(props);
         this.state = {
             width: window.innerWidth,
-            activeFilter: 0,
-            events: []
+            activeFilter: 0
         };
     }
 
-    // Check any updates from props (Filter & Event List)
+    // Check any updates from props (Filter)
     componentDidUpdate(prevProps) {
         if (this.props.activeFilter.activeFilter !== prevProps.activeFilter.activeFilter) {
             this.setState({ activeFilter: this.props.activeFilter.activeFilter });
-        }
-
-        if (this.props.events.list.data !== prevProps.events.list.data) {
-            this.setState({ events: this.props.events.list.data });
         }
     }
 
@@ -27,7 +22,7 @@ class EventListListComponent extends Component{
         const { width } = this.state;
         const isMobile = width <= 500;
 
-        let data = this.state.events || [];
+        let data = this.props.events.list.data || [];
         let today = new Date();
 
         if(this.state.activeFilter === 1) {
@@ -45,6 +40,7 @@ class EventListListComponent extends Component{
         const monthNames = [
             "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
         ];
+
         const articleDesktop = data.map( (event, key) => {
             let eventDate = new Date(event.startsAt);
 
