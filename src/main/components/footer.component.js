@@ -17,13 +17,13 @@ class FooterComponent extends Component{
         if (isMobile) {
             return (
                 <footer className="footer-mobile">
-                    <button>+</button>
+                    <button onClick={this.props.onAddEventClick}>+</button>
                 </footer>
             );
         } else {
             return (
                 <footer className="footer-desktop">
-                    <button>+</button>
+                    <button onClick={this.props.onAddEventClick} >+</button>
                 </footer>
             );
         }

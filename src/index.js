@@ -12,6 +12,7 @@ import * as serviceWorker from './serviceWorker';
 import Login from "./auth/containers/login.container";
 import Dashboard from "./dashboard/containers/dashboard.container";
 import PrivateRoute from "./auth/containers/private.route.container";
+import Application from "./main/containers/application.container";
 
 import { verifyAuth } from "./auth/actions";
 import { HashRouter } from "react-router-dom";
@@ -24,7 +25,7 @@ ReactDOM.render(
             <HashRouter>
                 <Switch>
                     <Route exact path="/login" component={Login} />
-                    <PrivateRoute path="/" onEnter={store.dispatch(verifyAuth())} component={Dashboard} />
+                    <PrivateRoute path="/" onEnter={store.dispatch(verifyAuth())} component={Application} />
                 </Switch>
             </HashRouter>
         </ConnectedRouter>
