@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function client() {
+export function client() {
   return axios.create({
     baseURL: process.env.SERVICES_URL,
     timeout: 3000,
@@ -8,4 +8,10 @@ function client() {
   });
 }
 
-export default client;
+export function clientAuth() {
+  return axios.create({
+    baseURL: process.env.SERVICES_URL,
+    timeout: 3000,
+    headers: {"APIKey": process.env.API_KEY, "Authorization": localStorage.getItem("authorization")}
+  });
+}

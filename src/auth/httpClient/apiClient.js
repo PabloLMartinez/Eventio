@@ -1,4 +1,4 @@
-import client from "../../lib/apiClient";
+import {client} from "../../lib/apiClient";
 
 export const refreshTokenAuth = (refreshToken) => {
     return client().post("/auth/native", {refreshToken});

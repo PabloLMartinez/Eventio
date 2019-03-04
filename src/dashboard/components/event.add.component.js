@@ -13,11 +13,14 @@ class EventListListComponent extends Component{
     }
 
     handleSubmit(e) {
-        console.log(this.title.value);
-        console.log(this.description.value);
-        console.log(this.date.value);
-        console.log(this.time.value);
-        console.log(this.capacity.value);
+        let startsAt = new Date(this.date.value + ' ' + this.time.value);
+        let data = {
+            title: this.title.value,
+            description: this.description.value,
+            startsAt: startsAt.toISOString(),
+            capacity: this.capacity.value
+        };
+        this.props.saveEvent(data);
         e.preventDefault();
     }
 
@@ -32,15 +35,41 @@ class EventListListComponent extends Component{
 
         if (isMobile) {
             return (
-                <div>
-                    <header className="header-desktop">
+                <div className="event-add-container-mobile">
+                    <header className="header-mobile">
                         <div className="logo" />
+                        <div className="close-button" onClick={this.handleCloseButton}/>
                     </header>
+
+                    <div className="event-add-form">
+                        <div className="form-header">
+                            <h2>Create new event</h2>
+                            <span>Enter details below.</span>
+                        </div>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="wrap-input">
+                                <input type="text" required placeholder="Title" ref={(title) => this.title = title}/>
+                            </div>
+                            <div className="wrap-input">
+                                <input type="text" required placeholder="Description" ref={(description) => this.description = description}/>
+                            </div>
+                            <div className="wrap-input">
+                                <input type="date" required placeholder="Date" ref={(date) => this.date = date}/>
+                            </div>
+                            <div className="wrap-input">
+                                <input type="time" placeholder="Time" ref={(time) => this.time = time}/>
+                            </div>
+                            <div className="wrap-input">
+                                <input type="text" required placeholder="Capacity" ref={(capacity) => this.capacity = capacity}/>
+                            </div>
+                            <button className="create-event-button">CREATE NEW EVENT</button>
+                        </form>
+                    </div>
                 </div>
             );
         } else {
             return (
-                <div>
+                <div className="event-add-container-desktop">
                     <header className="header-desktop">
                         <div className="logo" />
                         <div className="close-button" onClick={this.handleCloseButton}/>
@@ -53,19 +82,19 @@ class EventListListComponent extends Component{
                         </div>
                         <form onSubmit={this.handleSubmit}>
                             <div className="wrap-input">
-                                <input type="text" placeholder="Title" ref={(title) => this.title = title}/>
+                                <input type="text" required placeholder="Title" ref={(title) => this.title = title}/>
                             </div>
                             <div className="wrap-input">
-                                <input type="text" placeholder="Description" ref={(description) => this.description = description}/>
+                                <input type="text" required placeholder="Description" ref={(description) => this.description = description}/>
                             </div>
                             <div className="wrap-input">
-                                <input type="text" placeholder="Date" ref={(date) => this.date = date}/>
+                                <input type="date" required placeholder="Date" ref={(date) => this.date = date}/>
                             </div>
                             <div className="wrap-input">
-                                <input type="text" placeholder="Time" ref={(time) => this.time = time}/>
+                                <input type="time" placeholder="Time" ref={(time) => this.time = time}/>
                             </div>
                             <div className="wrap-input">
-                                <input type="text" placeholder="Capacity" ref={(capacity) => this.capacity = capacity}/>
+                                <input type="text" required placeholder="Capacity" ref={(capacity) => this.capacity = capacity}/>
                             </div>
                             <button className="create-event-button">CREATE NEW EVENT</button>
                         </form>

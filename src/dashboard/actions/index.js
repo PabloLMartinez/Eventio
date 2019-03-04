@@ -14,3 +14,15 @@ export const requestAllEventsError = error =>
 
 export const changeFilter = (activeFilter) =>
     ({ activeFilter, type: constants.CHANGE_FILTER });
+
+export const saveEvent = data =>
+    ({ data, type: constants.SAVE_EVENT });
+
+export const eventSaved = data =>
+    ({ data, type: constants.EVENT_SAVED });
+
+export const eventSaveError = error =>
+    ({ error, type: constants.EVENT_SAVE_ERROR });
+
+export const eventClear = () =>
+    ({ type: constants.EVENT_CLEAR });

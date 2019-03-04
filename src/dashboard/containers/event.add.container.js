@@ -10,6 +10,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        saveEvent: data => {
+            dispatch(actions.saveEvent(data));
+        },
         goBack: () => {
             dispatch(goBack());
         }

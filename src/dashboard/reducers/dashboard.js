@@ -13,6 +13,12 @@ const initialState = {
     events: {
         ...common
     },
+    form: {
+        editing: false,
+        data: null,
+        isFetching: false,
+        result: null
+    }
 };
 
 const dashboardReducer = (state = initialState, action) => {
@@ -45,6 +51,46 @@ const dashboardReducer = (state = initialState, action) => {
                         data: [],
                         isFetching: false
                     }
+                }
+            };
+        case constants.SAVE_EVENT:
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    data: action.data,
+                    isFetching: true,
+                    result: null
+                }
+            };
+        case constants.EVENT_SAVED:
+            return {
+                ...state,
+                form: {
+                    editing: true,
+                    data: action.data,
+                    isFetching: false,
+                    result: {success: true, text: "Event saved"}
+                }
+            };
+        case constants.EVENT_SAVE_ERROR:
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    editing: true,
+                    isFetching: false,
+                    result: {success: false, text: action.error}
+                }
+            };
+        case constants.EVENT_CLEAR:
+            return {
+                ...state,
+                form: {
+                    editing: false,
+                    data: null,
+                    isFetching: false,
+                    result: null
                 }
             };
         case constants.CHANGE_VIEW:
