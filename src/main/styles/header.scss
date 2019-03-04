@@ -11,7 +11,7 @@ header.header-desktop {
     width: 26px;
   }
   .profile-settings {
-    width: 12%;
+    width: auto;
     color: #97A0AA;
     .avatar {
       width: 40px;
@@ -19,7 +19,7 @@ header.header-desktop {
       float: left;
       background-color: #D9DCE1;
       border-radius: 35px;
-      margin: -8px; /* Use this negative value is a bad practice */
+      margin: -11px 5px 0 -10px; /* Use this negative value is a bad practice */
       text-align: center;
       span {
         position: relative;

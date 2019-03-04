@@ -6,10 +6,17 @@ class HeaderComponent extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            width: window.innerWidth
+            width: window.innerWidth,
+            userName: ""
         };
         this.handleLogout = this.handleLogout.bind(this);
     }
+
+    componentDidMount() {
+        const { profile } = this.props;
+        let fullName = profile.firstName + " " + profile.lastName;
+        this.setState({ userName: fullName ? fullName : "" });
+    };
 
     handleLogout(event) {
         this.props.logout();
@@ -17,7 +24,7 @@ class HeaderComponent extends Component{
     }
 
     render() {
-        const { width } = this.state;
+        const { width, userName } = this.state;
         const isMobile = width <= 500;
 
         if (isMobile) {
@@ -43,7 +50,7 @@ class HeaderComponent extends Component{
                             <span>TM</span>
                         </div>
                         <div className="username">
-                            <span className="user">Tom Watts</span>
+                            <span className="user">{userName}</span>
                             <span className="logout" onClick={this.handleLogout}>Logout</span>
                         </div>
                     </div>
