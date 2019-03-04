@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { push } from "react-router-redux";
-import FooterComponent from "../components/footer.component";
+import FooterComponent from "../components/FooterComponent";
 
 const mapStateToProps = (state) => {
     return state.authReducer;

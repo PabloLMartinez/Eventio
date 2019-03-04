@@ -3,7 +3,7 @@ import { push } from "react-router-redux";
 import * as authActions from "../actions";
 import * as apiClient from "../httpClient/apiClient";
 
-import { errorMessage } from "lib/errors";
+import { errorMessage } from "../../lib/errors";
 
 export function* requestLogin(payload) {
     try {

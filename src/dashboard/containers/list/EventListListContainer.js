@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import EventListPanelComponent from "../components/event.list.panel.component";
+import EventListListComponent from "../../components/list/EventListListComponent";
 
 const mapStateToProps = (state) => {
     return state.dashboardReducer;
@@ -9,9 +9,9 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-const EventListPanelContainer = connect(
+const EventListListContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(EventListPanelComponent);
+)(EventListListComponent);
 
-export default EventListPanelContainer;
+export default EventListListContainer;

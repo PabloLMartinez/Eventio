@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import NavComponent from "../components/nav.component";
+import NavComponent from "../components/NavComponent";
 
 import * as actions from "../../dashboard/actions";
 

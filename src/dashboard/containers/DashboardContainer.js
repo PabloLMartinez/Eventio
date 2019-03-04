@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import DashboardComponent from "../components/dashboard.component";
+import DashboardComponent from "../components/DashboardComponent";
 
 import * as actions from "../actions";
 

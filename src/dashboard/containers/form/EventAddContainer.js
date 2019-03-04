@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { goBack } from "react-router-redux";
-import EventAddComponent from "../components/event.add.component";
+import EventAddComponent from "../../components/form/EventAddComponent";
 
-import * as actions from "../actions";
+import * as actions from "../../actions";
 
 const mapStateToProps = (state) => {
     return state.dashboardReducer;

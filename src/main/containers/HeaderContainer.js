@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { push } from "react-router-redux";
-import HeaderComponent from "../components/header.component";
+import HeaderComponent from "../components/HeaderComponent";
 
 import * as actions from "../../auth/actions";
 

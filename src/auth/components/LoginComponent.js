@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Slide from "../../main/components/slide.component";
+import Slide from "../../main/components/SlideComponent";
 
 import "../styles/auth.scss";
 

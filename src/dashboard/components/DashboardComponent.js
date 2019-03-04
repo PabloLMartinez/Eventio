@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import Header from "../../main/containers/header.container";
-import Nav from "../../main/containers/nav.container";
-import Footer from "../../main/containers/footer.container";
-import EventListPanel from "../containers/event.list.panel.container";
-import EventListList from "../containers/event.list.list.container";
+import Header from "../../main/containers/HeaderContainer";
+import Nav from "../../main/containers/NavContainer";
+import Footer from "../../main/containers/FooterContainer";
+import EventListPanel from "../containers/list/EventListPanelContainer";
+import EventListList from "../containers/list/EventListListContainer";
 
 import "../styles/dashboard.scss";
 

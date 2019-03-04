@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import "../styles/event.list.list.scss";
+import "../../styles/event.list.panel.scss";
 
-class EventListListComponent extends Component{
+class EventListPanelComponent extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -41,7 +41,7 @@ class EventListListComponent extends Component{
             "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
         ];
 
-        const articleDesktop = data.map( (event, key) => {
+        const article = data.map( (event, key) => {
             let eventDate = new Date(event.startsAt);
 
             let dateFull =
@@ -51,50 +51,34 @@ class EventListListComponent extends Component{
                 eventDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
             return <article className="event-box" key={key}>
-                <h3>{event.title}</h3>
-                <p className="event-description">{event.description.substring(0,31)+"..."}</p>
-                <span className="event-owner">{event.owner.firstName + ' ' + event.owner.lastName}</span>
-                <span className="event-date">{dateFull}</span>
-                <div className="counter">{event.attendees.length + ' of ' + event.capacity}</div>
-                <button>EDIT</button>
-            </article>;
-        });
-
-        const articleMobile = data.map( (event, key) => {
-            let eventDate = new Date(event.startsAt);
-
-            let dateFull =
-                monthNames[(eventDate.getMonth())] + ' ' +
-                eventDate.getDate() + ', ' +
-                eventDate.getFullYear() + ' - ' +
-                eventDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-
-            return <article className="event-box" key={key}>
-                <h3>{event.title}</h3>
-                <p className="event-description">{event.description.substring(0,31)+"..."}</p>
-                <div>
                     <span className="event-date">{dateFull}</span>
-                    <br />
-                    <span className="counter">{event.attendees.length + ' of ' + event.capacity}</span>
-                    <button>EDIT</button>
-                </div>
-            </article>;
+                    <h3>{event.title}</h3>
+                    <span className="event-owner">{event.owner.firstName + ' ' + event.owner.lastName}</span>
+                    <p className="event-description">{event.description.substring(0,56)+"..."}</p>
+                    <div className="event-footer">
+                        <div className="counter"><i className="fas fa-user-alt"/>
+                            {event.attendees.length + ' of ' + event.capacity}
+                        </div>
+                        <button>EDIT</button>
+                    </div>
+                </article>;
         });
 
         if (isMobile) {
             return (
-                <section className="events-container-list-mobile">
-                    {articleMobile}
+                <section className="events-container-panel-mobile">
+                    {article}
                 </section>
             );
         } else {
             return (
-                <section className="events-container-list-desktop">
-                    {articleDesktop}
+                <section className="events-container-panel-desktop">
+                    {article}
                 </section>
             );
         }
+
     }
 }
 
-export default EventListListComponent;
+export default EventListPanelComponent;
