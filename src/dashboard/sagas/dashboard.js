@@ -22,7 +22,6 @@ export function* saveEvent({data}) {
         yield put(dashboardActions.eventClear());
         yield put(goBack());
     } catch(error){
-        console.log(error);
         yield put(dashboardActions.eventSaveError(errorMessage(error)));
     }
 }
