@@ -54,6 +54,9 @@
         border-bottom: 2px solid #E1E4E6;
         margin-bottom: 9px;
       }
+      input.error {
+        border-bottom: 2px solid #FF558F;
+      }
       span {
         color: #FF558F;
       }
@@ -133,6 +136,9 @@
         display: inline-block;
         border-bottom: 2px solid #E1E4E6;
         margin-bottom: 9px;
+      }
+      input.error {
+        border-bottom: 2px solid #FF558F;
       }
       span {
         color: #FF558F;

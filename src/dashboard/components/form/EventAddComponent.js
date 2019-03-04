@@ -101,31 +101,36 @@ class EventListListComponent extends Component{
                             <div className="wrap-input">
                                 <input ref="title" type="text" placeholder="Title"
                                        onChange={this.handleChange.bind(this, "title")}
-                                       value={this.state.fields["title"]}/>
+                                       value={this.state.fields["title"]}
+                                       className={this.state.errors["title"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["title"]}</span>
                             </div>
                             <div className="wrap-input">
                                 <input ref="description" type="text" placeholder="Description"
                                        onChange={this.handleChange.bind(this, "description")}
-                                       value={this.state.fields["description"]}/>
+                                       value={this.state.fields["description"]}
+                                       className={this.state.errors["description"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["description"]}</span>
                             </div>
                             <div className="wrap-input">
                                 <input ref="date" type="date" placeholder="Date"
                                        onChange={this.handleChange.bind(this, "date")}
-                                       value={this.state.fields["date"]}/>
+                                       value={this.state.fields["date"]}
+                                       className={this.state.errors["date"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["date"]}</span>
                             </div>
                             <div className="wrap-input">
                                 <input ref="time" type="time" placeholder="Time"
                                        onChange={this.handleChange.bind(this, "time")}
-                                       value={this.state.fields["time"]}/>
+                                       value={this.state.fields["time"]}
+                                       className={this.state.errors["time"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["time"]}</span>
                             </div>
                             <div className="wrap-input">
                                 <input ref="capacity" type="capacity" placeholder="Capacity"
                                        onChange={this.handleChange.bind(this, "capacity")}
-                                       value={this.state.fields["capacity"]}/>
+                                       value={this.state.fields["capacity"]}
+                                       className={this.state.errors["capacity"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["capacity"]}</span>
                             </div>
                             <button className="create-event-button">CREATE NEW EVENT</button>
@@ -150,31 +155,36 @@ class EventListListComponent extends Component{
                             <div className="wrap-input">
                                 <input ref="title" type="text" placeholder="Title"
                                        onChange={this.handleChange.bind(this, "title")}
-                                       value={this.state.fields["title"]}/>
+                                       value={this.state.fields["title"]}
+                                       className={this.state.errors["title"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["title"]}</span>
                             </div>
                             <div className="wrap-input">
                                 <input ref="description" type="text" placeholder="Description"
                                        onChange={this.handleChange.bind(this, "description")}
-                                       value={this.state.fields["description"]}/>
+                                       value={this.state.fields["description"]}
+                                       className={this.state.errors["description"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["description"]}</span>
                             </div>
                             <div className="wrap-input">
                                 <input ref="date" type="date" placeholder="Date"
                                        onChange={this.handleChange.bind(this, "date")}
-                                       value={this.state.fields["date"]}/>
+                                       value={this.state.fields["date"]}
+                                       className={this.state.errors["date"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["date"]}</span>
                             </div>
                             <div className="wrap-input">
                                 <input ref="time" type="time" placeholder="Time"
                                        onChange={this.handleChange.bind(this, "time")}
-                                       value={this.state.fields["time"]}/>
+                                       value={this.state.fields["time"]}
+                                       className={this.state.errors["time"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["time"]}</span>
                             </div>
                             <div className="wrap-input">
                                 <input ref="capacity" type="capacity" placeholder="Capacity"
                                        onChange={this.handleChange.bind(this, "capacity")}
-                                       value={this.state.fields["capacity"]}/>
+                                       value={this.state.fields["capacity"]}
+                                       className={this.state.errors["capacity"] ? "error" : "valid" }/>
                                 <span className="error">{this.state.errors["capacity"]}</span>
                             </div>
                             <button className="create-event-button">CREATE NEW EVENT</button>
