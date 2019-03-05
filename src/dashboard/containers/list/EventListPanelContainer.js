@@ -2,7 +2,10 @@ import { connect } from "react-redux";
 import EventListPanelComponent from "../../components/list/EventListPanelComponent";
 
 const mapStateToProps = (state) => {
-    return state.dashboardReducer;
+    return {
+        dashboardReducer: state.dashboardReducer,
+        profile: state.authReducer.profile
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {

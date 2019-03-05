@@ -43,13 +43,31 @@
           margin-right: 5px;
         }
       }
-      button {
+      button.edit-button {
         width: 84px;
         height: 26px;
         border-radius: 4px;
         border: none;
         color: gray;
         background-color: #D9DCE1;
+        cursor: pointer;
+      }
+      button.leave-button {
+        width: 84px;
+        height: 26px;
+        border-radius: 4px;
+        border: none;
+        color: #ffffff;
+        background-color: #FF4081;
+        cursor: pointer;
+      }
+      button.join-button {
+        width: 84px;
+        height: 26px;
+        border-radius: 4px;
+        border: none;
+        color: #ffffff;
+        background-color: #22D486;
         cursor: pointer;
       }
     }
@@ -99,13 +117,31 @@
           margin-right: 5px;
         }
       }
-      button {
+      button.edit-button {
         width: 94px;
         height: 30px;
         border-radius: 4px;
         border: none;
         color: gray;
         background-color: #D9DCE1;
+        cursor: pointer;
+      }
+      button.leave-button {
+        width: 94px;
+        height: 30px;
+        border-radius: 4px;
+        border: none;
+        color: #ffffff;
+        background-color: #FF4081;
+        cursor: pointer;
+      }
+      button.join-button {
+        width: 94px;
+        height: 30px;
+        border-radius: 4px;
+        border: none;
+        color: #ffffff;
+        background-color: #22D486;
         cursor: pointer;
       }
     }
