@@ -9,7 +9,7 @@ Build app:
 npm run build
 
 
-Setup .env file:
+Create and setup .env file:
 
 Local: 
 # NodeJS
