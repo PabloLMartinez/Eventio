@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --progress --colors",
-    "start": "node server.js"
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "axios": "^0.17.1",
