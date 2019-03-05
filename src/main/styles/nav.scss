@@ -1,0 +1,112 @@
+/***************************** Desktop *******************************/
+nav.nav-desktop {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  width: 74%;
+  margin: auto;
+  .navigator {
+    color: #97A0AA;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      li {
+        float: left;
+        font-size: 12px;
+        font-weight: 700;
+        margin-right: 35px;
+        cursor: pointer;
+      }
+      li.active {
+        color: #000000;
+      }
+    }
+  }
+  .view-mode {
+    .panel-icon-dark {
+      background: url(/assets/icons/panel_dark.png) no-repeat !important;
+      height: 20px;
+      width: 23px;
+      display: inline-block;
+      margin-right: 7px;
+      cursor: pointer;
+    }
+    .list-icon-light {
+      background: url(/assets/icons/list_light.png) no-repeat !important;
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .panel-icon-ligh {
+      background: url(/assets/icons/panel_light.png) no-repeat !important;
+      height: 20px;
+      width: 28px;
+      display: inline-block;
+      margin-right: 7px;
+      cursor: pointer;
+    }
+    .list-icon-dark {
+      background: url(/assets/icons/list_dark.png) no-repeat !important;
+      height: 17px;
+      width: 24px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}
+
+/***************************** Mobile *******************************/
+nav.nav-mobile {
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  .navigator {
+    color: #AEB3B9;
+    font-size: 13px;
+    font-weight: 600;
+    select.select-view-mode {
+      border:0;
+      outline:0;
+      background-color: #F9F9FB;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+  .view-mode {
+    .panel-icon-dark {
+      background: url(/assets/icons/panel_dark.png) no-repeat !important;
+      height: 20px;
+      width: 23px;
+      display: inline-block;
+      margin-right: 7px;
+      cursor: pointer;
+    }
+    .list-icon-light {
+      background: url(/assets/icons/list_light.png) no-repeat !important;
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .panel-icon-ligh {
+      background: url(/assets/icons/panel_light.png) no-repeat !important;
+      height: 20px;
+      width: 23px;
+      display: inline-block;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+    .list-icon-dark {
+      background: url(/assets/icons/list_dark.png) no-repeat !important;
+      height: 17px;
+      width: 24px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}
