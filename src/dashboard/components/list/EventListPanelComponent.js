@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "../../styles/event.list.panel.scss";
+import "../../styles/eventListPanel.scss";
 
 class EventListPanelComponent extends Component{
     constructor(props) {
