@@ -11,13 +11,17 @@ npm run build
 # Try to login with these users:
 
 Username: brucebanner@strv.com      Password: kill3r
+
 Username: steverogers@strv.com      Password: am3riCa
+
+Username: thor@strv.com             Password: missMyBroth3r
+
+Username: blackwidow@strv.com       Password: l0veLateX
        
-thor@strv.com              missMyBroth3r
-peterparker@strv.com       hat3Spid3rs
-blackwidow@strv.com        l0veLateX
-buckybarnes@strv.com       darkS0ldier
-tonystark@strv.com         ir0nL0ver
+Username: buckybarnes@strv.com      Password: darkS0ldier           
+        
+Username: tonystark@strv.com        Password: ir0nL0ver    
+         
 
 Create and setup .env file:
 
