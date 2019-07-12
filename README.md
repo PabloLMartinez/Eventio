@@ -8,6 +8,16 @@ npm run start
 Build app: 
 npm run build
 
+# Try to login with these users:
+
+Username                   Password
+brucebanner@strv.com       kill3r
+steverogers@strv.com       am3riCa
+thor@strv.com              missMyBroth3r
+peterparker@strv.com       hat3Spid3rs
+blackwidow@strv.com        l0veLateX
+buckybarnes@strv.com       darkS0ldier
+tonystark@strv.com         ir0nL0ver
 
 Create and setup .env file:
 
