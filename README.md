@@ -23,10 +23,10 @@ Username: buckybarnes@strv.com      Password: darkS0ldier
 Username: tonystark@strv.com        Password: ir0nL0ver    
          
 
-Create and setup .env file:
+#Create and setup .env file:
 
-Local: 
-# NodeJS
+#Local: 
+
 NODE_ENV=local
 
 PORT=8080
@@ -34,8 +34,8 @@ PORT=8080
 SERVICES_URL=https://testproject-api-v2.strv.com
 API_KEY=185399d4c202c010e094646e17b1fca0f2a74472
 
-Prod:
-# NodeJS
+#Prod:
+
 NODE_ENV=production
 
 PORT=8080
