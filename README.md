@@ -32,6 +32,7 @@ NODE_ENV=local
 PORT=8080
 
 SERVICES_URL=https://testproject-api-v2.strv.com
+
 API_KEY=185399d4c202c010e094646e17b1fca0f2a74472
 
 # Prod:
@@ -41,4 +42,5 @@ NODE_ENV=production
 PORT=8080
 
 SERVICES_URL=https://testproject-api-v2.strv.com
+
 API_KEY=185399d4c202c010e094646e17b1fca0f2a74472
