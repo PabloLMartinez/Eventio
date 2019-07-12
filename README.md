@@ -10,9 +10,9 @@ npm run build
 
 # Try to login with these users:
 
-Username                   Password
-brucebanner@strv.com       kill3r
-steverogers@strv.com       am3riCa
+Username: brucebanner@strv.com      Password: kill3r
+Username: steverogers@strv.com      Password: am3riCa
+       
 thor@strv.com              missMyBroth3r
 peterparker@strv.com       hat3Spid3rs
 blackwidow@strv.com        l0veLateX
