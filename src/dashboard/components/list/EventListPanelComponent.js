@@ -6,7 +6,6 @@ class EventListPanelComponent extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            width: window.innerWidth,
             activeFilter: 0,
             eventList: []
         };
@@ -66,8 +65,7 @@ class EventListPanelComponent extends Component{
     }
 
     render() {
-        const { width, eventList } = this.state;
-        const isMobile = width <= 500;
+        const { eventList } = this.state;
 
         let data = eventList || [];
         let today = new Date();
@@ -126,19 +124,11 @@ class EventListPanelComponent extends Component{
                 </article>;
         });
 
-        if (isMobile) {
-            return (
-                <section className="events-container-panel-mobile">
-                    {article}
-                </section>
-            );
-        } else {
-            return (
-                <section className="events-container-panel-desktop">
-                    {article}
-                </section>
-            );
-        }
+        return (
+            <section className="events-container-panel-desktop">
+                {article}
+            </section>
+        );
 
     }
 }
