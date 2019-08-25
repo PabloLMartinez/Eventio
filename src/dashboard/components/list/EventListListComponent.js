@@ -6,7 +6,6 @@ class EventListListComponent extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            width: window.innerWidth,
             activeFilter: 0,
             eventList: []
         };
@@ -67,8 +66,7 @@ class EventListListComponent extends Component{
     }
 
     render() {
-        const { width, eventList } = this.state;
-        const isMobile = width <= 500;
+        const { eventList } = this.state;
 
         let data = eventList || [];
         let today = new Date();
@@ -89,7 +87,7 @@ class EventListListComponent extends Component{
             "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
         ];
 
-        const articleDesktop = data.map( (event, key) => {
+        const article = data.map( (event, key) => {
             let eventDate = new Date(event.startsAt);
 
             let buttonAction = "";
@@ -123,55 +121,12 @@ class EventListListComponent extends Component{
             </article>;
         });
 
-        const articleMobile = data.map( (event, key) => {
-            let eventDate = new Date(event.startsAt);
+        return (
+            <section className="events-container-list-desktop">
+                {article}
+            </section>
+        );
 
-            let buttonAction = "";
-
-            let dateFull =
-                monthNames[(eventDate.getMonth())] + ' ' +
-                eventDate.getDate() + ', ' +
-                eventDate.getFullYear() + ' - ' +
-                eventDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-
-            // Check if logged user is an attendee
-            let attendee = event.attendees.filter( (attendee) => {
-                return this.props.profile._id === attendee._id;
-            });
-
-            if(this.props.profile._id === event.owner._id) {
-                buttonAction = <button className="edit-button">EDIT</button>;
-            } else if(attendee.length >= 1) {
-                buttonAction = <button onClick={this.handleLeave.bind(this, event._id)} className="leave-button">LEAVE</button>;
-            } else if(attendee.length <= 0) {
-                buttonAction = <button onClick={this.handleJoin.bind(this, event._id)} className="join-button">JOIN</button>;
-            }
-
-            return <article className="event-box" key={key}>
-                <h3>{event.title}</h3>
-                <p className="event-description">{event.description.substring(0,31)+"..."}</p>
-                <div>
-                    <span className="event-date">{dateFull}</span>
-                    <br />
-                    <span className="counter">{event.attendees.length + ' of ' + event.capacity}</span>
-                    {buttonAction}
-                </div>
-            </article>;
-        });
-
-        if (isMobile) {
-            return (
-                <section className="events-container-list-mobile">
-                    {articleMobile}
-                </section>
-            );
-        } else {
-            return (
-                <section className="events-container-list-desktop">
-                    {articleDesktop}
-                </section>
-            );
-        }
     }
 }
 
